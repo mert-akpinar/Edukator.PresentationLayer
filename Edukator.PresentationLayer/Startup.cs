@@ -1,3 +1,4 @@
+using Edukator.BusinessLayer.Abstract;
 using Edukator.BussinessLayer.Abstract;
 using Edukator.BussinessLayer.Concrete;
 using Edukator.DataAccessLayer.Abstract;
@@ -31,6 +32,13 @@ namespace Edukator.PresentationLayer
             services.AddDbContext<Context>();
             services.AddScoped<ICategoryDal, EfCategoryDal>();
             services.AddScoped<ICategoryService, CategoryManager>();
+
+            services.AddScoped<ICourseDal, EfCourseDal>();
+            services.AddScoped<ICourseService, CourseManager>();
+
+            services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+            services.AddScoped<ISocialMediaService, SocialMediaManager>();
+
 
             services.AddControllersWithViews();
         }
