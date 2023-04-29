@@ -28,6 +28,11 @@ namespace Edukator.BussinessLayer.Concrete
             return _courseDal.GetByID(id);
         }
 
+        public List<Course> TGetCoursesWithCategory()
+        {
+            return _courseDal.GetCoursesWithCategory();
+        }
+
         public List<Course> TGetList()
         {
             return _courseDal.GetList();
