@@ -1,5 +1,4 @@
-﻿using Bogus.DataSets;
-using Edukator.EntityLayer.Concrete;
+﻿using Edukator.EntityLayer.Concrete;
 using Edukator.PresentationLayer.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -24,14 +23,13 @@ namespace Edukator.PresentationLayer.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(RegisterViewModel model)
         {
-            AppUser appUser = new AppUser();
+            AppUser appUser = new AppUser()
             {
 				Name = model.Name,
                 Surname = model.Surname,
                 City = model.City,
-                Email = model.Email,
-                Password = model.Password
-                
+                Email = model.Email, 
+                UserName = model.UserName                
             };
             var result = await _userManager.CreateAsync(appUser, model.Password);
             if(result.Succeeded)

@@ -1,4 +1,4 @@
-﻿
+﻿@model RegisterViewModel
 @{
     Layout = null;
 }
@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Course Register Form a Flat Responsive Widget Template :: w3layouts</title>
+	<title>Edukator Yeni Kayıt Sayfası</title>
 	<!-- custom-theme -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -41,62 +41,59 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="logo">
 						<a href="#"><span class="fa fa-graduation-cap" aria-hidden="true"></span></a>
 					</div>
-					<h1>Register to our course</h1>
-					<p>
-						Donec ipsum lorem, sodales a sagittis ut, tristique purus. Aenean in est pretium lectus euismod facilisis.
-						Aliquam dapibus rhoncus ex quis fringilla. Proin interdum eros mauris,hendrerit suscipit lectus cursus et.
-					</p>
+					<h1>Kurslarımıza Kayıt Olun</h1>
+					<p>Alanında rofesyonel ekibimiz ile hazırladığımız bir çok kategori de milyonlarca talep alan kurslarımıza sizleri de davet ediyoruz...</p>
 					<div class="content3">
 						<ul>
-							<li><a class="" href="#"> Know More</a></li>
-							<li><a class="read" href="#"> Get Started</a></li>
+							<li><a class="" href="/Login/Index/">Giriş Yapın</a></li>
+							<li><a class="read" href="/Default/Index/">Kursları Gör</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="register-right">
 				<div class="register-in">
-					<h2><span class="fa fa-pencil"></span> register here</h2>
+					<h2><span class="fa fa-pencil"></span>Hemen Kaydol</h2>
 					<div class="register-form">
-						<form action="#" method="post">
+						<form method="post">
 							<div class="fields-grid">
 								<div class="styled-input agile-styled-input-top">
-									<input type="text" name="First name" required="">
-									<label>Enter Full Name</label>
+									<input type="text" asp-for="Name" required="">
+									<label>Adınız</label>
 									<span></span>
 								</div>
 								<div class="styled-input">
-									<input type="email" name="Email" required="">
-									<label>Email</label>
+									<input type="text" asp-for="Surname" required="">
+									<label>Soyadınız</label>
 									<span></span>
 								</div>
 								<div class="styled-input">
-									<input type="tel" name="Phone" required="">
-									<label>Phone Number</label>
+									<input type="email" asp-for="Email" required="">
+									<label>E-mail Adresiniz</label>
 									<span></span>
 								</div>
 								<div class="styled-input">
-									<input type="password" name="password" required="">
-									<label>Password</label>
+									<input type="password" asp-for="Password" required="">
+									<label>Şifreniz</label>
 									<span></span>
 								</div>
 								<div class="styled-input agile-styled-input-top">
-									<select id="category2" required="">
-										<option value="">Course Type*</option>
-										<option value="">Diploma</option>
-										<option value="">Full time</option>
-										<option value="">Part time</option>
-										<option value="">Higher degree</option>
-										<option value="">Graduate</option>
-										<option value="">Pg</option>
-										<option value="">Degree</option>
+									<select id="category2" required="" asp-for="City">
+										<option value="">Şehir Seçiniz*</option>
+										<option value="Adana">Adana</option>
+										<option value="Ankara">Ankara</option>
+										<option value="Antalya">Antalya</option>
+										<option value="Bursa">Bursa</option>
+										<option value="İstanbul">İstanbul</option>
+										<option value="Trabzon">Trabzon</option>
+										<option value="Elazığ">Elazığ</option>
 									</select>
 									<span></span>
 								</div>
 								<div class="clear"> </div>
-								<label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>I agree to the <a href="#">Terms and Conditions</a></label>
+								<label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>Kullanıcı şartlarını okudum.<a href="#">Kabul ediyorum.</a></label>
 							</div>
-							<input type="submit" value="Register">
+							<input type="submit" value="Kayıt Ol">
 						</form>
 					</div>
 				</div>
@@ -105,7 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clear"> </div>
 		</div>
 		<!-- copyright -->
-		<p class="agile-copyright">© 2018 Course Register Form. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts</a></p>
+		<p class="agile-copyright">© @DateTime.Now.Year Edukator Proje. Tüm hakları saklıdır | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts</a></p>
 		<!-- //copyright -->
 	</section>
 	<!-- //section -->
