@@ -1,4 +1,5 @@
 using Edukator.BusinessLayer.Abstract;
+using Edukator.BusinessLayer.Concrete;
 using Edukator.BussinessLayer.Abstract;
 using Edukator.BussinessLayer.Concrete;
 using Edukator.DataAccessLayer.Abstract;
@@ -39,6 +40,12 @@ namespace Edukator.PresentationLayer
 
             services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
             services.AddScoped<ISocialMediaService, SocialMediaManager>();
+
+            services.AddScoped<IFeatureDal, EfFeatureDal>();
+            services.AddScoped<IFeatureService, FeatureManager>();
+
+            services.AddScoped<IAboutGridDal, EfAboutGridDal>();
+            services.AddScoped<IAboutGridService, AboutGridManager>();
 
             services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();
 
