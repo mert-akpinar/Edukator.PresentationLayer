@@ -45,11 +45,17 @@ namespace Edukator.PresentationLayer
             services.AddScoped<IFeatureDal, EfFeatureDal>();
             services.AddScoped<IFeatureService, FeatureManager>();
 
+            services.AddScoped<IContactDal, EfContactDal>();
+            services.AddScoped<IContactService, ContactManager>();
+
             services.AddScoped<IAboutGridDal, EfAboutGridDal>();
             services.AddScoped<IAboutGridService, AboutGridManager>();
 
             services.AddScoped<IMailSubscribeDal, EfMailSubscribeDal>();
             services.AddScoped<IMailSubscribeService, MailSubscribeManager>();
+
+            services.AddScoped<ICourseRegisterDal, EfCourseRegisterDal>();
+            services.AddScoped<ICourseRegisterService, CourseRegisterManager>();
 
             services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
