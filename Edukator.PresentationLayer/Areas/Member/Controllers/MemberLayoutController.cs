@@ -21,9 +21,8 @@ namespace Edukator.PresentationLayer.Areas.Member.Controllers
         }
         public async Task<PartialViewResult> MemberSidebarPartial()
         {
-            var values = await _userManager.FindByNameAsync(User.Identity.Name);    
-            ViewBag.name = values.Name;
-            ViewBag.Surname = values.Surname;
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            ViewBag.name = values.Name + ' ' + values.Surname;
             return PartialView();
         }
     }
