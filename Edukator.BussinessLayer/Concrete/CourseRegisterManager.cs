@@ -17,6 +17,12 @@ namespace Edukator.BusinessLayer.Concrete
         {
             _courseRegisterDal = courseRegisterDal;
         }
+
+        public List<CourseRegister> TCourseListWithCourseByUser(int id)
+        {
+            return _courseRegisterDal.CourseListWithCourseByUser(id);
+        }
+
         public List<CourseRegister> TCourseRegisterListWithCoursesAndUsers()
         {
             return _courseRegisterDal.CourseRegisterListWithCoursesAndUsers();
