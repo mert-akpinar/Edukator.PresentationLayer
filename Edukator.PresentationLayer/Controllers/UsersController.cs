@@ -6,19 +6,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Edukator.PresentationLayer.Areas.Member.Controllers
+namespace Edukator.PresentationLayer.Controllers
 {
-    [Area("Member")]
-    public class ProfileController : Controller
+    public class UsersController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
-        public ProfileController(UserManager<AppUser> userManager)
+        public UsersController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
         }
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var values = _userManager.Users.ToList();
             return View(values);
         }
     }
